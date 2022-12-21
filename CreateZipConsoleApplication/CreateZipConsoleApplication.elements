@@ -2,10 +2,10 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <ProductVersion>3.5</ProductVersion>
-    <RootNamespace>S3UploadConsoleApplication</RootNamespace>
-    <ProjectGuid>{473835A1-1E0B-4BA9-9BE5-9BED4E2633AC}</ProjectGuid>
+    <RootNamespace>CreateZipConsoleApplication</RootNamespace>
+    <ProjectGuid>{B8C2D3D0-991B-4FD5-855A-D26070904A17}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <AssemblyName>S3UploadConsoleApplication</AssemblyName>
+    <AssemblyName>CreateZipConsoleApplication</AssemblyName>
     <ApplicationIcon>Properties\App.ico</ApplicationIcon>
     <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
     <TargetFramework>.NET6.0</TargetFramework>
@@ -30,9 +30,7 @@
     <Reference Include="Echoes">
       <Private>True</Private>
     </Reference>
-    <NuGetReference Include="AWSSDK.S3:[3.7.101.41]">
-      <Private>True</Private>
-    </NuGetReference>
+    <Reference Include="System.IO.Compression.FileSystem" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.pas" />
