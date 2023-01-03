@@ -1,9 +1,13 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # RemObjects Fire
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "BuildTools.Core", "BuildTools.Core\BuildTools.Core.elements", "{D34DEFEA-A6DC-428D-8B19-B03D63493D26}"
+EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "CreateZipConsoleApplication", "CreateZipConsoleApplication\CreateZipConsoleApplication.elements", "{B8C2D3D0-991B-4FD5-855A-D26070904A17}"
 EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "S3UploadConsoleApplication", "S3UploadConsoleApplication\S3UploadConsoleApplication.elements", "{473835A1-1E0B-4BA9-9BE5-9BED4E2633AC}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "UpdateTemplateConsoleApplication", "UpdateTemplateConsoleApplication\UpdateTemplateConsoleApplication.elements", "{78ADE092-966C-4EA6-B916-0C43C33A6B60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +15,10 @@ Global
 		Release|AnyCPU = Release|AnyCPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D34DEFEA-A6DC-428D-8B19-B03D63493D26}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{D34DEFEA-A6DC-428D-8B19-B03D63493D26}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{D34DEFEA-A6DC-428D-8B19-B03D63493D26}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{D34DEFEA-A6DC-428D-8B19-B03D63493D26}.Release|AnyCPU.Build.0 = Release|AnyCPU
 		{B8C2D3D0-991B-4FD5-855A-D26070904A17}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
 		{B8C2D3D0-991B-4FD5-855A-D26070904A17}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
 		{B8C2D3D0-991B-4FD5-855A-D26070904A17}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
@@ -19,6 +27,10 @@ Global
 		{473835A1-1E0B-4BA9-9BE5-9BED4E2633AC}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
 		{473835A1-1E0B-4BA9-9BE5-9BED4E2633AC}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
 		{473835A1-1E0B-4BA9-9BE5-9BED4E2633AC}.Release|AnyCPU.Build.0 = Release|AnyCPU
+		{78ADE092-966C-4EA6-B916-0C43C33A6B60}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{78ADE092-966C-4EA6-B916-0C43C33A6B60}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{78ADE092-966C-4EA6-B916-0C43C33A6B60}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{78ADE092-966C-4EA6-B916-0C43C33A6B60}.Release|AnyCPU.Build.0 = Release|AnyCPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

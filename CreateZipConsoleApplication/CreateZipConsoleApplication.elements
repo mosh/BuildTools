@@ -31,6 +31,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.IO.Compression.FileSystem" />
+    <ProjectReference Include="..\BuildTools.Core\BuildTools.Core.elements">
+      <HintPath>..\BuildTools.Core\Bin\Debug\BuildTools.Core.dll</HintPath>
+      <Project>{D34DEFEA-A6DC-428D-8B19-B03D63493D26}</Project>
+      <ProjectFile>..\BuildTools.Core\BuildTools.Core.elements</ProjectFile>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.pas" />
