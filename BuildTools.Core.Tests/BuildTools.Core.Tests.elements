@@ -2,10 +2,10 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <ProductVersion>3.5</ProductVersion>
-    <RootNamespace>BuildTools.Core</RootNamespace>
-    <ProjectGuid>{D34DEFEA-A6DC-428D-8B19-B03D63493D26}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AssemblyName>BuildTools.Core</AssemblyName>
+    <RootNamespace>BuildTools.Core.Tests</RootNamespace>
+    <ProjectGuid>{A34EAA62-FB1E-4777-9BDC-66FA809FB462}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>BuildTools.Core.Tests</AssemblyName>
     <ApplicationIcon>Properties\App.ico</ApplicationIcon>
     <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
     <TargetFramework>.NET6.0</TargetFramework>
@@ -14,7 +14,7 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <Optimize>False</Optimize>
     <OutputPath>.\Bin\Debug</OutputPath>
-    <ConditionalDefines>DEBUG;TRACE;</ConditionalDefines>
+    <DefineConstants>DEBUG;TRACE;</DefineConstants>
     <GeneratePDB>True</GeneratePDB>
     <GenerateMDB>True</GenerateMDB>
     <EnableAsserts>True</EnableAsserts>
@@ -27,23 +27,36 @@
     <EnableUnmanagedDebugging>False</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Echoes">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RemObjects.Elements.EUnit">
+      <Private>True</Private>
+    </Reference>
+    <ProjectReference Include="..\BuildTools.Core\BuildTools.Core.elements">
+      <HintPath>..\BuildTools.Core\Bin\Debug\BuildTools.Core.dll</HintPath>
+      <Project>{D34DEFEA-A6DC-428D-8B19-B03D63493D26}</Project>
+      <ProjectFile>..\BuildTools.Core\BuildTools.Core.elements</ProjectFile>
+      <Private>True</Private>
+    </ProjectReference>
+    <Reference Include="Elements">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.pas" />
     <Compile Include="Properties\AssemblyInfo.pas" />
     <Content Include="Properties\App.ico" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.pas" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
     </None>
-    <Compile Include="S3Helpers.pas" />
-    <Compile Include="S3Upload.pas" />
-    <Compile Include="YamlHelpers.pas" />
-    <Compile Include="OutputHelpers.pas" />
-  </ItemGroup>
-  <ItemGroup>
-    <NuGetReference Include="AWSSDK.S3:[3.7.101.41]">
-      <Private>True</Private>
-    </NuGetReference>
+    <Compile Include="Properties\Settings.Designer.pas" />
+    <Compile Include="YamlHelpersTests.pas" />
+    <Compile Include="OutputHelpersTests.pas" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.Echoes.targets" />
 </Project>

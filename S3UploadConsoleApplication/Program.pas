@@ -15,20 +15,52 @@ uses
 
 begin
 
-  var args := Environment.GetCommandLineArgs;
+  var filename:String := '';
+  var bucketName := '';
 
-  if(args.Length = 3)then
+
+  if Console.IsInputRedirected then
   begin
 
-    var filename:String := args[1];
-    var bucketName := args[2];
+    var stdin := String.Empty;
 
-    S3Upload.UploadToBucket(filename, bucketName);
+    using reader := new StreamReader(Console.OpenStandardInput(), Console.InputEncoding) do
+    begin
+      stdin := reader.ReadToEnd();
+    end;
+
+
+    if((stdin.Length>0) and (stdin.Contains(YamlHelpers.successText)))then
+    begin
+      bucketName := YamlHelpers.RetrieveFirstBucket(stdin);
+      filename := OutputHelpers.ExtractFilename(stdin);
+    end;
 
   end
   else
   begin
-    Console.WriteLine('No command line arguments passed you need 2 filename bucketname');
+    var args := Environment.GetCommandLineArgs;
+
+    if(args.Length = 3) then
+    begin
+      filename := args[1];
+      bucketName := args[2];
+    end
+    else
+    begin
+      Console.WriteLine('No command line arguments passed you need 2 filename bucketname');
+      exit;
+    end;
+  end;
+
+  if(not String.IsNullOrEmpty(filename) and not String.IsNullOrEmpty(bucketName))then
+  begin
+    var s3Uri := await S3Upload.UploadToBucketAsync(filename, bucketName);
+    Console.WriteLine($'Zip uploaded {filename} S3 Uri is {s3Uri}');
+  end
+  else
+  begin
+    Console.WriteLine('filename and bucketname not supplied');
   end;
 
 

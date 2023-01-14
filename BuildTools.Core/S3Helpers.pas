@@ -15,7 +15,6 @@ type
     constructor(credentials:AWSCredentials; region:RegionEndpoint);
     begin
       client := new AmazonS3Client(credentials, region);
-
     end;
 
     method GetObjectMetadataAsync(bucketName:String; key:String):Task<GetObjectMetadataResponse>;

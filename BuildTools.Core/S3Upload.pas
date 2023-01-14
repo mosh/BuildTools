@@ -13,8 +13,9 @@ type
   protected
   public
 
-    class method UploadToBucket(filename:String; bucketName:String);
+    class method UploadToBucketAsync(filename:String; bucketName:String):Task<String>;
     begin
+      var s3Uri:String := nil;
       var sharedFile := new SharedCredentialsFile;
 
       var profile:CredentialProfile;
@@ -44,45 +45,31 @@ type
           Console.WriteLine($'bucket {bucketName} ');
           Console.WriteLine($'using key {key} ');
 
-          Console.WriteLine('Press any key continue, x to quit');
 
-          var cki := Console.ReadKey;
-
-          if(cki.KeyChar <> 'x')then
+          if(localFile.Exists)then
           begin
 
-            if(localFile.Exists)then
+
+            var helpers := new S3Helpers(credentials, RegionEndpoint.USEast2);
+
+            if(not await helpers.FileExists(bucketName, key))then
             begin
 
+              var putResponse := await helpers.PutObjectAsync(localFile, bucketName, key);
 
-              var helpers := new S3Helpers(credentials, RegionEndpoint.USEast2);
-
-              if(not await helpers.FileExists(bucketName, key))then
+              if(putResponse.HttpStatusCode = HttpStatusCode.OK)then
               begin
-
-                var putResponse := await helpers.PutObjectAsync(localFile, bucketName, key);
-
-                if(putResponse.HttpStatusCode = HttpStatusCode.OK)then
-                begin
-                  Console.WriteLine('Upload was successful');
-                  Console.WriteLine($'S3 Uri is s3://{bucketName}/{key}');
-
-
-                end
-                else
-                begin
-                  Console.WriteLine($'Failed with status code {putResponse.HttpStatusCode}');
-                end;
-
+                s3Uri := $'s3://{bucketName}/{key}';
               end
               else
               begin
-                Console.WriteLine('File already exists in bucket');
+                Console.WriteLine($'Failed with status code {putResponse.HttpStatusCode}');
               end;
+
             end
             else
             begin
-              Console.WriteLine('Local file does not exist');
+              Console.WriteLine('File already exists in bucket');
             end;
           end;
         end
@@ -97,6 +84,7 @@ type
         Console.WriteLine('Profile doesnt exist');
       end;
 
+      exit s3Uri;
     end;
 
   end;

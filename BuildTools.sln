@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # RemObjects Fire
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "BuildTools.Core", "BuildTools.Core\BuildTools.Core.elements", "{D34DEFEA-A6DC-428D-8B19-B03D63493D26}"
 EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "BuildTools.Core.Tests", "BuildTools.Core.Tests\BuildTools.Core.Tests.elements", "{A34EAA62-FB1E-4777-9BDC-66FA809FB462}"
+EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "CreateZipConsoleApplication", "CreateZipConsoleApplication\CreateZipConsoleApplication.elements", "{B8C2D3D0-991B-4FD5-855A-D26070904A17}"
 EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "S3UploadConsoleApplication", "S3UploadConsoleApplication\S3UploadConsoleApplication.elements", "{473835A1-1E0B-4BA9-9BE5-9BED4E2633AC}"
@@ -19,6 +21,10 @@ Global
 		{D34DEFEA-A6DC-428D-8B19-B03D63493D26}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
 		{D34DEFEA-A6DC-428D-8B19-B03D63493D26}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
 		{D34DEFEA-A6DC-428D-8B19-B03D63493D26}.Release|AnyCPU.Build.0 = Release|AnyCPU
+		{A34EAA62-FB1E-4777-9BDC-66FA809FB462}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{A34EAA62-FB1E-4777-9BDC-66FA809FB462}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{A34EAA62-FB1E-4777-9BDC-66FA809FB462}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{A34EAA62-FB1E-4777-9BDC-66FA809FB462}.Release|AnyCPU.Build.0 = Release|AnyCPU
 		{B8C2D3D0-991B-4FD5-855A-D26070904A17}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
 		{B8C2D3D0-991B-4FD5-855A-D26070904A17}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
 		{B8C2D3D0-991B-4FD5-855A-D26070904A17}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
