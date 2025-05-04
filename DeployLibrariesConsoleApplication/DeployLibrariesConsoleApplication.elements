@@ -2,10 +2,10 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <ProductVersion>3.5</ProductVersion>
-    <RootNamespace>S3UploadConsoleApplication</RootNamespace>
-    <ProjectGuid>{473835A1-1E0B-4BA9-9BE5-9BED4E2633AC}</ProjectGuid>
+    <RootNamespace>DeployLibrariesConsoleApplication</RootNamespace>
+    <ProjectGuid>{E8B5F51B-1946-4290-9286-B21BF4E12FEF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <AssemblyName>S3UploadConsoleApplication</AssemblyName>
+    <AssemblyName>DeployLibrariesConsoleApplication</AssemblyName>
     <ApplicationIcon>Properties\App.ico</ApplicationIcon>
     <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
     <TargetFramework>.NET8.0</TargetFramework>
@@ -30,12 +30,9 @@
     <Reference Include="Echoes">
       <Private>True</Private>
     </Reference>
-    <NuGetReference Include="AWSSDK.S3:[3.7.101.41]">
-      <Private>True</Private>
-    </NuGetReference>
     <ProjectReference Include="..\BuildTools.Core\BuildTools.Core.elements">
       <HintPath>..\BuildTools.Core\Bin\Debug\BuildTools.Core.dll</HintPath>
-      <Project>{D34DEFEA-A6DC-428D-8B19-B03D63493D26}</Project>
+      <Project>{d34defea-a6dc-428d-8b19-b03d63493d26}</Project>
       <ProjectFile>..\BuildTools.Core\BuildTools.Core.elements</ProjectFile>
       <Private>True</Private>
     </ProjectReference>

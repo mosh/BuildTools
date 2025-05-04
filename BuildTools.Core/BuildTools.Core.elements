@@ -8,7 +8,7 @@
     <AssemblyName>BuildTools.Core</AssemblyName>
     <ApplicationIcon>Properties\App.ico</ApplicationIcon>
     <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
-    <TargetFramework>.NET6.0</TargetFramework>
+    <TargetFramework>.NET8.0</TargetFramework>
     <Mode>Echoes</Mode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -39,6 +39,8 @@
     <Compile Include="S3Upload.pas" />
     <Compile Include="YamlHelpers.pas" />
     <Compile Include="OutputHelpers.pas" />
+    <Compile Include="NuPkgUtilities.cs" />
+    <Compile Include="Models\Version.cs" />
   </ItemGroup>
   <ItemGroup>
     <NuGetReference Include="AWSSDK.S3:[3.7.101.41]">

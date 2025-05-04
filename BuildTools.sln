@@ -7,6 +7,8 @@ Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "BuildTools.Core.Tests", "Bu
 EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "CreateZipConsoleApplication", "CreateZipConsoleApplication\CreateZipConsoleApplication.elements", "{B8C2D3D0-991B-4FD5-855A-D26070904A17}"
 EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "DeployLibrariesConsoleApplication", "DeployLibrariesConsoleApplication\DeployLibrariesConsoleApplication.elements", "{E8B5F51B-1946-4290-9286-B21BF4E12FEF}"
+EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "S3UploadConsoleApplication", "S3UploadConsoleApplication\S3UploadConsoleApplication.elements", "{473835A1-1E0B-4BA9-9BE5-9BED4E2633AC}"
 EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "UpdateTemplateConsoleApplication", "UpdateTemplateConsoleApplication\UpdateTemplateConsoleApplication.elements", "{78ADE092-966C-4EA6-B916-0C43C33A6B60}"
@@ -29,6 +31,10 @@ Global
 		{B8C2D3D0-991B-4FD5-855A-D26070904A17}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
 		{B8C2D3D0-991B-4FD5-855A-D26070904A17}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
 		{B8C2D3D0-991B-4FD5-855A-D26070904A17}.Release|AnyCPU.Build.0 = Release|AnyCPU
+		{E8B5F51B-1946-4290-9286-B21BF4E12FEF}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{E8B5F51B-1946-4290-9286-B21BF4E12FEF}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{E8B5F51B-1946-4290-9286-B21BF4E12FEF}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{E8B5F51B-1946-4290-9286-B21BF4E12FEF}.Release|AnyCPU.Build.0 = Release|AnyCPU
 		{473835A1-1E0B-4BA9-9BE5-9BED4E2633AC}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
 		{473835A1-1E0B-4BA9-9BE5-9BED4E2633AC}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
 		{473835A1-1E0B-4BA9-9BE5-9BED4E2633AC}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
